@@ -4,7 +4,8 @@
     "deep-dependency-b": "workspace:*"
   },
   "peerDependencies":  {
-    "deep-dependency-a": "workspace:*"
+    "deep-dependency-a": "workspace:*",
+    "third-party": "workspace:*"
   },
   "dependenciesMeta": {
     "deep-dependency-b": {
