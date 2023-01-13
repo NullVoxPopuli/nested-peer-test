@@ -1,0 +1,27 @@
+lockfileVersion: 5.4
+
+importers:
+
+  .:
+    specifiers: {}
+
+  packages/deep-dependency-a:
+    specifiers: {}
+
+  packages/deep-dependency-b:
+    specifiers: {}
+
+  packages/host-app:
+    specifiers:
+      middle-dependency: workspace:*
+    dependencies:
+      middle-dependency: link:../middle-dependency
+
+  packages/middle-dependency:
+    specifiers:
+      deep-dependency-b: workspace:*
+    dependencies:
+      deep-dependency-b: link:../deep-dependency-b
+
+  packages/third-party:
+    specifiers: {}
