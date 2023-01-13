@@ -1,6 +1,7 @@
 {
   "name": "host-app",
   "dependencies": {
-    "middle-dependency": "workspace:*"
+    "middle-dependency": "workspace:*",
+    "third-party": "workspace:*"
   }
 }

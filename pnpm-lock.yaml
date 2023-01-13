@@ -14,8 +14,10 @@ importers:
   packages/host-app:
     specifiers:
       middle-dependency: workspace:*
+      third-party: workspace:*
     dependencies:
       middle-dependency: link:../middle-dependency
+      third-party: link:../third-party
 
   packages/middle-dependency:
     specifiers:
