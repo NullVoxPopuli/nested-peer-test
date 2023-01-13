@@ -3,5 +3,10 @@
   "dependencies": {
     "middle-dependency": "workspace:*",
     "third-party": "workspace:*"
+  },
+  "dependenciesMeta": {
+    "middle-dependency": {
+      "injected": true
+    }
   }
 }

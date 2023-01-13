@@ -16,8 +16,11 @@ importers:
       middle-dependency: workspace:*
       third-party: workspace:*
     dependencies:
-      middle-dependency: link:../middle-dependency
+      middle-dependency: file:packages/middle-dependency
       third-party: link:../third-party
+    dependenciesMeta:
+      middle-dependency:
+        injected: true
 
   packages/middle-dependency:
     specifiers:
@@ -27,3 +30,14 @@ importers:
 
   packages/third-party:
     specifiers: {}
+
+packages:
+
+  file:packages/middle-dependency:
+    resolution: {directory: packages/middle-dependency, type: directory}
+    name: middle-dependency
+    peerDependencies:
+      deep-dependency-a: workspace:*
+    dependencies:
+      deep-dependency-b: link:packages/deep-dependency-b
+    dev: false
