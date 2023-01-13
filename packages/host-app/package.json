@@ -1,0 +1,6 @@
+{
+  "name": "host-app",
+  "dependencies": {
+    "middle-dependency": "workspace:*"
+  }
+}

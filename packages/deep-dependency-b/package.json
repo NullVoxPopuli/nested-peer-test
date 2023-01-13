@@ -1,0 +1,6 @@
+{
+  "name": "deep-dependency-b",
+  "peerDependencies": {
+    "third-party": "workspace:*"
+  }
+}

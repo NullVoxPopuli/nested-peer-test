@@ -1,0 +1,9 @@
+{
+  "name": "middle-dependency",
+  "dependencies": {
+    "deep-dependency-b": "workspace:*"
+  },
+  "peerDependencies":  {
+    "deep-dependency-a": "workspace:*"
+  }
+}
