@@ -13,10 +13,12 @@ importers:
 
   packages/host-app:
     specifiers:
+      deep-dependency-a: workspace:*
       middle-dependency: workspace:*
       third-party: workspace:*
     dependencies:
-      middle-dependency: file:packages/middle-dependency
+      deep-dependency-a: link:../deep-dependency-a
+      middle-dependency: file:packages/middle-dependency_eru6ptitanehonpvpg4xz7sjny
       third-party: link:../third-party
     dependenciesMeta:
       middle-dependency:
@@ -26,18 +28,44 @@ importers:
     specifiers:
       deep-dependency-b: workspace:*
     dependencies:
-      deep-dependency-b: link:../deep-dependency-b
+      deep-dependency-b: file:packages/deep-dependency-b
+    dependenciesMeta:
+      deep-dependency-a:
+        injected: true
+      deep-dependency-b:
+        injected: true
 
   packages/third-party:
     specifiers: {}
 
 packages:
 
-  file:packages/middle-dependency:
+  file:packages/deep-dependency-b:
+    resolution: {directory: packages/deep-dependency-b, type: directory}
+    name: deep-dependency-b
+    peerDependencies:
+      third-party: workspace:*
+    dev: false
+
+  file:packages/deep-dependency-b_lrv4vxfgeczz2vudthjp74cb5u:
+    resolution: {directory: packages/deep-dependency-b, type: directory}
+    id: file:packages/deep-dependency-b
+    name: deep-dependency-b
+    peerDependencies:
+      third-party: workspace:*
+    dependencies:
+      third-party: link:packages/third-party
+    dev: false
+
+  file:packages/middle-dependency_eru6ptitanehonpvpg4xz7sjny:
     resolution: {directory: packages/middle-dependency, type: directory}
+    id: file:packages/middle-dependency
     name: middle-dependency
     peerDependencies:
       deep-dependency-a: workspace:*
     dependencies:
-      deep-dependency-b: link:packages/deep-dependency-b
+      deep-dependency-a: link:packages/deep-dependency-a
+      deep-dependency-b: file:packages/deep-dependency-b_lrv4vxfgeczz2vudthjp74cb5u
+    transitivePeerDependencies:
+      - third-party
     dev: false

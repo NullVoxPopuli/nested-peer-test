@@ -5,5 +5,13 @@
   },
   "peerDependencies":  {
     "deep-dependency-a": "workspace:*"
+  },
+  "dependenciesMeta": {
+    "deep-dependency-b": {
+      "injected": true
+    },
+    "deep-dependency-a": {
+      "injected": true
+    }
   }
 }
